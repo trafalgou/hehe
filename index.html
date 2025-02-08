@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Collect the Flowers! 🌸</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        #game-container {
+            width: 400px;
+            height: 400px;
+            background: #f9f9f9;
+            border: 4px solid black;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #rat {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            transition: all 0.1s ease-out;
+        }
+
+        #flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+        }
+
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+
+        #next-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        #controls button {
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .scurry {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Move the Rat to Collect Flowers! 🐭🌸</h1>
+    <p>Use Arrow Keys or Touch Buttons to Move</p>
+
+    <div id="game-container">
+        <img id="rat" src="rat.png" alt="Rat">
+        <img id="flower" src="flower.png" alt="Flower">
+    </div>
+
+    <div id="controls">
+        <button onclick="moveRat('ArrowLeft')">⬅</button>
+        <button onclick="moveRat('ArrowUp')">⬆</button>
+        <button onclick="moveRat('ArrowDown')">⬇</button>
+        <button onclick="moveRat('ArrowRight')">➡</button>
+    </div>
+
+    <p id="score">Flowers Left: 5</p>
+    <p id="message">collect it baby girl</p>
+
+    <button id="next-button" onclick="goToValentinePage()">💌 Click Me 💌</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

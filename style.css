@@ -1,0 +1,261 @@
+/* === ✅ GENERAL STYLES (SCROLLABLE & RESPONSIVE) === */
+body {
+    text-align: center;
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* ✅ Allows scrolling */
+    height: auto;
+}
+
+/* ✅ GAME CONTAINER (Perfectly Scaled) */
+#game-container {
+    width: 90vw;
+    height: 90vw;
+    max-width: 400px;
+    max-height: 400px;
+    background: #f9f9f9;
+    border: 4px solid black;
+    position: relative;
+    margin: 10px auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ✅ RAT (Responsive Size) */
+#rat {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    max-width: 50px;
+    max-height: 50px;
+    transition: all 0.1s ease-out;
+}
+
+/* ✅ FLOWERS */
+#flower {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* ✅ MESSAGE DISPLAY */
+#message {
+    font-size: 5vw;
+    font-weight: bold;
+    color: red;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ✅ SCORE DISPLAY */
+#score {
+    font-size: 4vw;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ✅ NEXT BUTTON - FIXED CENTER */
+#next-button {
+    display: none;
+    padding: 15px 30px;
+    font-size: 6vw;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    
+    /* ✅ Centering Trick */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* ✅ Ensures It's Always Visible */
+    z-index: 999;
+    
+    /* ✅ Mobile Optimization */
+    max-width: 80%;
+    text-align: center;
+}
+
+/* ✅ MOBILE-FRIENDLY CONTROLS */
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ✅ BIGGER BUTTONS FOR MOBILE */
+#controls button {
+    font-size: 7vw;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 15vw;
+    height: 15vw;
+}
+
+/* ✅ BUTTON TAP EFFECT */
+#controls button:active {
+    background-color: #cc0000;
+}
+
+/* === ✅ RAT MOVEMENT (SCURRY ANIMATION) === */
+@keyframes scurry {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(2px, 2px); }
+}
+
+/* ✅ APPLY SCURRY ANIMATION */
+.scurry {
+    animation: scurry 0.1s linear infinite;
+}
+
+/* === ❤️ FINAL VALENTINE PAGE STYLES === */
+.valentine-body {
+    background: url('sparkling.gif') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    color: white;
+    font-size: 5vw;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ✅ FLOATING HEARTS */
+.hearts {
+    font-size: 8vw;
+    animation: float 2s infinite alternate ease-in-out;
+    position: absolute;
+    color: red;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+/* ✅ BLING GLITTER EFFECT */
+.bling {
+    font-size: 6vw;
+    position: absolute;
+    animation: sparkle 1s infinite alternate;
+}
+
+@keyframes sparkle {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* ✅ PIXEL LOVE BORDER */
+.valentine-container {
+    border: 5px solid #ff66b2;
+    padding: 10px;
+    background: rgba(255, 182, 193, 0.7);
+    box-shadow: 0px 0px 20px 5px pink;
+    max-width: 85%;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* ✅ YES AND NO BUTTONS (SCROLLABLE & VISIBLE) */
+.valentine-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative; /* ✅ Makes sure buttons don't disappear */
+    bottom: 0;
+}
+
+/* ✅ YES BUTTON */
+#yes-button {
+    font-size: 5vw;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* ✅ NO BUTTON - KEEPS SHRINKING */
+/* ✅ NO BUTTON SHRINKS EVERY CLICK */
+#no-button {
+    font-size: 5vw;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: grey;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* ✅ NO BUTTON SHRINKS EVERY CLICK */
+.no-shrink {
+    font-size: 3vw !important;
+    padding: 5px 10px !important;
+}
+
+/* ✅ YES BUTTON GROWS EVERY CLICK */
+.yes-grow {
+    font-size: 8vw !important;
+    padding: 15px 30px !important;
+}
+
+/* ✅ FIXING BUTTON POSITION (NOW VISIBLE) */
+#yes-button, #no-button {
+    display: inline-block;
+    margin: 10px;
+}
+
+/* ✅ DANCING CAT */
+#dancing-cat {
+    width: 150px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    animation: dance 2s infinite alternate;
+}
+
+@keyframes dance {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* ✅ FINAL IMAGE (HAPPY.jpeg) */
+.final-image {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px white;
+}
