@@ -26,11 +26,11 @@ scurrySound.volume = 1.0;
 scurrySound.playbackRate = 2.5;
 
 function playScurrySound() {
-    if (scurrySound.paused || scurrySound.ended) {
-        scurrySound.currentTime = 0;
-        scurrySound.play().catch(e => console.error("Sound error:", e));
-    }
+    let newSound = scurrySound.cloneNode(); 
+    newSound.volume = 1.0;
+    newSound.play().catch(e => console.error("Sound error:", e));
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     let noButton = document.getElementById("no-button");
