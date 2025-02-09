@@ -55,6 +55,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     yesButton.addEventListener("click", function () {
         alert("YAYYYYY!!! 😍🎉"); // ✅ Show YAYYYY Alert
+        let song = new Audio("https://trafalgou.github.io/hehe/yay.mp3");  
+        song.loop = true; // 🎵 Loop the music
+        song.volume = 0.8; // 🔊 Adjust volume (0.0 - 1.0)
+
+        // ✅ Force Play After User Interaction
+        song.play().then(() => {
+            console.log("Music playing!");
+        }).catch(error => {
+            console.error("Music failed to play:", error);
+            alert("Click the page again to play music!");
+        });
+        
         document.body.innerHTML = `<img src="HAPPY.jpeg" class="final-image">`;
     });
 });
